@@ -43,7 +43,7 @@ export default class extends Controller {
     onAdd() {
         var items = this.store.get('$page.todos');
         for (var i in items) {
-            if (this.store.get('$page.text').toLowerCase() === items[i].text.toLowerCase()) {
+            if (this.store.get('$page.text').trim().toLowerCase() === items[i].text.trim().toLowerCase()) {
                 Toast.create(toastconfig.warningToast("ToDo Exists")).open();
                 return;
             }
