@@ -3,9 +3,9 @@ import { LookupField } from 'cx/widgets';
 import { LabelsLeftLayout, KeySelection } from 'cx/ui';
 import { Grid } from 'cx/widgets';
 import { Window } from 'cx/widgets';
- 
+
 import Controller from './Controller';
- 
+
 export default <cx>
     <main controller={Controller}>
         <div putInto="header">
@@ -28,7 +28,7 @@ export default <cx>
                     autoFocus
                 />
             </div>
- 
+
             <Window
                 title={{ bind: "$page.windowTitle" }}
                 visible={{ bind: "$page.visible", defaultValue: false }}
@@ -37,7 +37,7 @@ export default <cx>
                 modal
             >
                 <div style={{
-                    backgroundColor: "darkseagreen",
+                    backgroundColor: "#A7A7A7",
                     color: "white",
                     minHeight: 24,
                     padding: 5,
@@ -45,15 +45,15 @@ export default <cx>
                 }}><Text value={{ bind: '$page.textValue' }} />
                 </div>
             </Window>
- 
+
         </div>
- 
+
         <Grid records-bind="$page.records" style={{ width: "100%" }} columns={[
-            { header: 'Country Name', field: 'countryName',align:"center", sortable: true },
-            { header: 'Capital', field: 'capital',align:"center", sortable: true },
-            { header: 'Continent', field: 'continent',align:"center", sortable: true },
-            { header: 'Population', field: 'population',align:"center", sortable: true },
-            { header: 'Languages', field: 'languages',align:"center", sortable: true }
+            { header: 'Country Name', field: 'countryName', align: "center", sortable: true },
+            { header: 'Capital', field: 'capital', align: "center", sortable: true },
+            { header: 'Continent', field: 'continent', align: "center", sortable: true },
+            { header: 'Population', field: 'population', align: "center", sortable: true },
+            { header: 'Languages', field: 'languages', align: "center", sortable: true }
         ]}
             selection={{ type: KeySelection, keyField: 'countryName', bind: "$page.selection" }}
         />
